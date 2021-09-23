@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+ 
+
+  redis:
+    container_name: redis
+    image: redis:5.0.6-alpine
+    ports:
+      - '6378:6379'
+    restart: always
+    networks:
+      - loyalthe_network
+
+volumes:
+  postgres:
+  pgadmin:
+
+networks:
+  loyalthe_network:
+    driver: bridge
